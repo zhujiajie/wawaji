@@ -1,0 +1,69 @@
+<html>
+ <head>
+	  <title> wawaji </title>
+	  <meta charset="UTF-8">
+	  <meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,minimum-scale=1.0, maximum-scale=1.0" />
+	  <link rel="stylesheet" type="text/css" href="css/index.css">
+	 <script type="text/javascript">
+		(function (doc, win) {
+        var docEl = doc.documentElement,
+            resizeEvt = 'onorientationchange' in window ? 'onorientationchange' : 'resize',
+            recalc = function () {
+                var clientWidth = docEl.clientWidth;
+                if (!clientWidth) return;
+                if(clientWidth>=750){
+                    docEl.style.fontSize = '100px';
+                }else{
+                    docEl.style.fontSize = 100 * (clientWidth / 750) + 'px';
+                }
+            };
+
+        if (!doc.addEventListener) return;
+        win.addEventListener(resizeEvt, recalc, false);
+        doc.addEventListener('DOMContentLoaded', recalc, false);
+    })(document, window);
+	 </script>
+	  <script src="js/jquery-3.2.1.min.js"></script>
+ </head>
+
+ <body>
+	<div class="box">
+		<div class="top"></div>
+        <div class="zhuashoubox" id="zhuanshoubox">
+            <div id="zhua" class="zhuashou">
+                <div id="point"></div>
+            </div>
+        </div>
+        <div class="nav clearfix">
+            <div class="nav-left">
+                <div class="name">
+                    <span>昵称：XXX</span>
+                </div>
+                <div class="score">
+                    <span>分数:</span>
+                    <span id="newscore">0</span>
+                </div>
+            </div>
+            <div class="nav-right">
+                    <img class="count-down" src="images/long.png" alt="">
+                    <span id="count-text" class="count-text">60s</span>
+                    <img id="war-time" src="images/sekuai.png">
+            </div>
+        </div>
+        <div class="bottom">
+            <div id="img_list"></div>
+            <div class="huatibox">
+            <div class="huati"></div>
+            </div> 
+            <div class="btn" id="btn"></div>
+        </div>
+        <div class="addscore">
+            +50
+        </div>
+        <div class="reducescore">
+            -50
+        </div>
+	</div>
+    <script src="js/index.js"></script>
+ </body>
+</html>
